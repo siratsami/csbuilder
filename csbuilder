@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo ""
+echo " This tools creates custom subdomains with '-,.' characters and your custom wordlist By B4GG3R"
+echo " Usage: csbuilder wordlist.txt admin"
+echo ""
+
+for wordlist in $(cat $1); do echo ""$wordlist"-$2"; done >> $2-cs
+for wordlist in $(cat $1); do echo "$2-"$wordlist""; done >> $2-cs
+for wordlist in $(cat $1); do echo ""$wordlist".$2"; done >> $2-cs
+for wordlist in $(cat $1); do echo "$2."$wordlist""; done >> $2-cs
+for wordlist in $(cat $1); do echo ""$wordlist"$2"; done >> $2-cs
+for wordlist in $(cat $1); do echo "$2"$wordlist""; done >> $2-cs
+for line in $(cat $2-cs | wc -l); do echo " "$line" lines saved to "$2"-cs"; done
+
+echo ""
