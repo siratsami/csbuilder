@@ -7,8 +7,6 @@ echo ""
 
 for wordlist in $(cat $1); do echo ""$wordlist"-$2"; done >> $2-cs
 for wordlist in $(cat $1); do echo "$2-"$wordlist""; done >> $2-cs
-for wordlist in $(cat $1); do echo ""$wordlist".$2"; done >> $2-cs
-for wordlist in $(cat $1); do echo "$2."$wordlist""; done >> $2-cs
 for wordlist in $(cat $1); do echo ""$wordlist"$2"; done >> $2-cs
 for wordlist in $(cat $1); do echo "$2"$wordlist""; done >> $2-cs
 for line in $(cat $2-cs | wc -l); do echo " "$line" lines saved to "$2"-cs"; done
